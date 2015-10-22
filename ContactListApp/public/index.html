@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="contactListApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Contact List App</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="css/bootstrap-theme.min.css">
+</head>
+<body>
+	<div class="container" ng-controller="AppCtrl">
+		<h1>Contact List App</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Password</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><input type="text" class="form-control" ng-model="contact.uName" /></td>
+					<td><input type="password" class="form-control" ng-model="contact.uPass" /></td>
+					<td><input type="email" class="form-control" ng-model="contact.uEmail" /></td>
+					<td><button class="btn btn-primary" ng-click="addContact()">Add Contact</button></td>
+				</tr>
+				<tr data-ng-repeat="contact in contactlist">
+					<td>{{contact.uName}}</td>
+					<td>{{contact.uPass}}</td>
+					<td>{{contact.uEmail}}</td>
+					<td><button class="btn btn-secondary" ng-click="editContact()">Edit</button></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>	
+
+<script type="text/javascript" src="js/angular.min.js"></script>
+<script type="text/javascript" src="js/controllers/controller.js"></script>	
+</body>
+</html>
